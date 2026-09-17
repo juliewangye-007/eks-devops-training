@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-training
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: eks-training
+
+  template:
+    metadata:
+      labels:
+        app: eks-training
+
+    spec:
+      containers:
+        - name: eks-training
+          image: eks-training:v2
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8080

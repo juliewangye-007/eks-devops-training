@@ -4,8 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello from my EKS DevOps Training!"
-
+    return "Hello from EKS DevOps Training Version 2!"
 @app.route("/health")
 def health():
     return "OK", 200
